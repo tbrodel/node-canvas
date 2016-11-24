@@ -25,10 +25,12 @@
 #define isinf(x) (!_finite(x))
 #endif
 
+#ifndef __FreeBSD__
 #ifndef isnan
 #define isnan(x) std::isnan(x)
 #define isinf(x) std::isinf(x)
 #endif
+#endif __FreeBSD__
 
 Nan::Persistent<FunctionTemplate> Context2d::constructor;
 
